@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import {handleAnswer} from './Helper'
 function App() {
   const [instruction,setInstruction] = useState('');
   const [answer,setAnswer] = useState('');
@@ -9,7 +10,7 @@ function App() {
         value={instruction}
         onChange={e=>setInstruction(e.target.value)}
       />
-      <button>Submit</button>
+      <button onClick={()=>handleAnswer(instruction,setInstruction,setAnswer)}>Submit</button>
       <p>This is Answer!!!!!!!!!</p>
       <p>{answer}</p>
     </div>  

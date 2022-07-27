@@ -27,10 +27,10 @@ export const handleAnswer = (instruction,setInstruction,setAnswer) => {
     numValue.push(intValue);
     
     //check user input apply or not
-    if(operatorSubString == 'apply') {
+    if(operatorSubString === 'apply') {
         //reverse looping for calculation
         for(let i = numValue.length - 1; i >= 0; i--) {
-            if(operatorValue[i] == 'apply') {
+            if(operatorValue[i] === 'apply') {
                 result = numValue[i];
             }else {
                 result = process(result,numValue[i],operatorValue[i])
