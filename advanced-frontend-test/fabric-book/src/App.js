@@ -1,4 +1,7 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import React, {useEffect,useState} from 'react'
+import Home from './components/pages/Home'
+import Fabric from './components/pages/Fabric'
 function App() {
   return (
     <div className="App">
