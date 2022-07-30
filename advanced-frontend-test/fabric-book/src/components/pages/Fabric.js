@@ -32,6 +32,7 @@ const Fabric = () => {
     finish: "",
     weave: "",
   });
+  const [isShowed, setIsShowed] = useState(false);
   const { id } = useParams();
 
   const fabricId = fabricCode[id];
@@ -64,14 +65,14 @@ const Fabric = () => {
   }, []);
   return (
     <>
-      <div className="row">
+      <div className="row my-5">
         <div className="col-12 d-flex justify-content-between">
           <h1>{fabric.name}</h1>
           <h1>{id}</h1>
         </div>
       </div>
       <div className="row">
-        <div className="col-md-6">
+        <div className="col-md-6 my-3 my-md-2">
           <Carousel dynamicHeight={true} showThumbs={false} className="vh-30">
             {fabric.fabricImages &&
               fabric.fabricImages.map((fa, index) => {
@@ -80,7 +81,8 @@ const Fabric = () => {
                     <img
                       src={fa.image_url}
                       alt=""
-                      style={{ height: "50vh", objectFit: "cover" }}
+                      style={{ objectFit: "contain" }}
+                      height="500"
                     />
                   </div>
                 );
@@ -108,7 +110,7 @@ const Fabric = () => {
               </tr>
             </tbody>
           </table>
-          <div>
+          <div className="my-5">
             <div className="d-flex align-items-center justify-content-start">
               <span className="me-auto">Ironing:</span>
               <span>
@@ -142,16 +144,61 @@ const Fabric = () => {
           </div>
         </div>
       </div>
-      <div className="row">
-        <p>Fabric Name - {fabric.name}</p>
-        <p>Fabric ID - {fabric.id}</p>
-        <p>Fabric Comfort - {fabric.comfort}</p>
-        <p>Fabric Ironging - {fabric.ironing}</p>
-        <p>Fabric Type - {fabric.type}</p>
-        <p>Fabric Material - {fabric.material}</p>
-        <p>Fabric Weight - {fabric.weight}</p>
-        <p>Fabric Finish - {fabric.finish}</p>
-        <p>Fabric Weave - {fabric.weave}</p>
+      <div className="row mt-5 d-flex">
+        <button
+          className="btn btn-primary col-10 mx-auto d-md-none"
+          onClick={() => setIsShowed(true)}
+        >
+          View design inspiration
+        </button>
+        <h1 className="my-5 text-center">Design Inspiration</h1>
+        <div className="col-12 d-flex justify-content-between mb-5">
+          <div className="card col-3">
+            <img
+              src="https://i.pinimg.com/originals/58/ec/77/58ec7707465907e7ba28cf7ddcf0ee64.jpg"
+              className="card-img-top"
+              alt="..."
+              height="300"
+            />
+            <div className="card-body text-center">
+              <h5 className="card-title">Card title</h5>
+              <p className="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+          <div className="card col-3">
+            <img
+              src="https://i.pinimg.com/originals/58/ec/77/58ec7707465907e7ba28cf7ddcf0ee64.jpg"
+              className="card-img-top"
+              alt="..."
+              height="300"
+            />
+            <div className="card-body text-center">
+              <h5 className="card-title">Card title</h5>
+              <p className="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+          <div className="card col-3">
+            <img
+              src="https://i.pinimg.com/originals/58/ec/77/58ec7707465907e7ba28cf7ddcf0ee64.jpg"
+              className="card-img-top"
+              alt="..."
+              height="300"
+            />
+            <div className="card-body text-center">
+              <h5 className="card-title">Card title</h5>
+              <p className="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
