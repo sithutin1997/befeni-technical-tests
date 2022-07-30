@@ -87,6 +87,60 @@ const Fabric = () => {
               })}
           </Carousel>
         </div>
+        <div className="col-md-6 table-responsive">
+          <table className="table table-bordered table-responsive text-nowrap">
+            <tbody>
+              <tr>
+                <th scope="row">Type:</th>
+                <td>{fabric.type}</td>
+              </tr>
+              <tr>
+                <th scope="row">Material:</th>
+                <td>{fabric.material}</td>
+              </tr>
+              <tr>
+                <th scope="row">Weave:</th>
+                <td>{fabric.weave}</td>
+              </tr>
+              <tr>
+                <th scope="row">Weight:</th>
+                <td>{fabric.weight}</td>
+              </tr>
+            </tbody>
+          </table>
+          <div>
+            <div className="d-flex align-items-center justify-content-start">
+              <span className="me-auto">Ironing:</span>
+              <span>
+                {fabric.ironing && (
+                  <ReactStars
+                    count={5}
+                    size={24}
+                    value={fabric.ironing}
+                    isHalf={true}
+                    edit={false}
+                    activeColor="#ffd700"
+                  />
+                )}
+              </span>
+            </div>
+            <div className="d-flex align-items-center">
+              <span className="me-auto">Comfort:</span>
+              <span>
+                {fabric.comfort && (
+                  <ReactStars
+                    count={5}
+                    size={24}
+                    value={fabric.comfort}
+                    isHalf={true}
+                    edit={false}
+                    activeColor="#ffd700"
+                  />
+                )}
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="row">
         <p>Fabric Name - {fabric.name}</p>
@@ -98,14 +152,6 @@ const Fabric = () => {
         <p>Fabric Weight - {fabric.weight}</p>
         <p>Fabric Finish - {fabric.finish}</p>
         <p>Fabric Weave - {fabric.weave}</p>
-        <ReactStars
-          count={5}
-          size={24}
-          value={3.5}
-          isHalf={true}
-          edit={false}
-          activeColor="#ffd700"
-        />
       </div>
     </>
   );
