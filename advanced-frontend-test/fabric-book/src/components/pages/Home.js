@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div className="card" style={{width: "18rem"}}>
       <div className="card-body" >
-        <label for="usr">URL:</label>
+        <label htmlFor="usr">URL:</label>
         <input type="text" ref={urlRef} className="form-control mb-4" id="usr" />
         <button type="button" class="btn btn-primary" onClick={()=>handleUrl()}>Submit</button>
       </div> 

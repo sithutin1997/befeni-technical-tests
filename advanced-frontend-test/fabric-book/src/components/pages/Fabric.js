@@ -16,7 +16,13 @@ const Fabric = () => {
       'K5'    :	30005,
       'T500'  :	20500
   }
-  const [fabric,setFabric] = useState('');
+  let [fabric,setFabric] = useState({
+    id: '',
+    name: '',
+    comfort: '',
+    ironing: '',
+    type: '',
+  });
   const {id} = useParams();
 
   const fabricId = fabricCode[id];
@@ -24,7 +30,11 @@ const Fabric = () => {
     const fetchData = async() => {
       const client = new ClientBase(config, 'de');
       client.updateAccessTokenDirectly(token);
-      await client.getFabric(fabricId).then(res=>setFabric(res))
+      await client.getFabric(fabricId)
+      .then(res=>{
+        console.log(res)
+        setFabric({id:res.id,name:res.name,comfort:res.comfort,ironing:res.ironing,type:res.type})
+      })
     }
     fetchData();
     //cleanup function
@@ -36,7 +46,11 @@ const Fabric = () => {
   return (
     <div> 
       <h1>Fabric id - {id}</h1>
-      {/* <p>{fabric}</p> */}
+      <p>Fabric Name - {fabric.name}</p>
+      <p>Fabric ID - {fabric.id}</p>
+      <p>Fabric Comfort - {fabric.comfort}</p>
+      <p>Fabric Ironging - {fabric.ironing}</p>
+      <p>Fabric Type - {fabric.type}</p>
     </div>
   )
 }
