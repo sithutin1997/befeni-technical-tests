@@ -16,7 +16,7 @@ const Fabric = () => {
       'K5'    :	30005,
       'T500'  :	20500
   }
-  const [fabric,setFabric] = useState();
+  const [fabric,setFabric] = useState('');
   const {id} = useParams();
 
   const fabricId = fabricCode[id];
@@ -24,13 +24,15 @@ const Fabric = () => {
     const fetchData = async() => {
       const client = new ClientBase(config, 'de');
       client.updateAccessTokenDirectly(token);
-      const data = await client.getFabric(fabricId).then(res=>console.log(res))
-      setFabric(data)
+      await client.getFabric(fabricId).then(res=>setFabric(res))
     }
     fetchData();
-    return setFabric({})
+    //cleanup function
+    return ()=>{
+      setFabric([])
+    }
+    
   },[])
-
   return (
     <div> 
       <h1>Fabric id - {id}</h1>

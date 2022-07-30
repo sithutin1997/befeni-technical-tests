@@ -4,7 +4,7 @@ import Home from './components/pages/Home'
 import Fabric from './components/pages/Fabric'
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
