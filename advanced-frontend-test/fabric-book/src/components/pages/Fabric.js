@@ -67,8 +67,15 @@ const Fabric = () => {
     <>
       <div className="row my-5">
         <div className="col-12 d-flex justify-content-between">
-          <h1>{fabric.name}</h1>
-          <h1>{id}</h1>
+          <h2>{fabric.name}</h2>
+          <h2>{id}</h2>
+          <button
+            className="btn btn-link btn-sm col-10 d-none d-md-inline-block mx-md-0 d-lg-none ms-auto"
+            onClick={() => setIsShowed(!isShowed)}
+            style={{ width: "200px" }}
+          >
+            View design inspiration
+          </button>
         </div>
       </div>
       <div className="row">
@@ -147,55 +154,58 @@ const Fabric = () => {
       <div className="row mt-5 d-flex">
         <button
           className="btn btn-primary col-10 mx-auto d-md-none"
-          onClick={() => setIsShowed(true)}
+          onClick={() => setIsShowed(!isShowed)}
         >
           View design inspiration
         </button>
-        <h1 className="my-5 text-center">Design Inspiration</h1>
-        <div className="col-12 d-flex justify-content-between mb-5">
-          <div className="card col-3">
-            <img
-              src="https://i.pinimg.com/originals/58/ec/77/58ec7707465907e7ba28cf7ddcf0ee64.jpg"
-              className="card-img-top"
-              alt="..."
-              height="300"
-            />
-            <div className="card-body text-center">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
+        <div className={isShowed ? "" : "d-none d-lg-block"}>
+          <h1 className="my-5 text-center">Design Inspiration</h1>
+          <div className="col-12 d-flex justify-content-between mb-5">
+            <div className="card col-3">
+              <img
+                src="https://i.pinimg.com/originals/58/ec/77/58ec7707465907e7ba28cf7ddcf0ee64.jpg"
+                className="card-img-top"
+                alt="..."
+                height="300"
+              />
+              <div className="card-body text-center">
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="card col-3">
-            <img
-              src="https://i.pinimg.com/originals/58/ec/77/58ec7707465907e7ba28cf7ddcf0ee64.jpg"
-              className="card-img-top"
-              alt="..."
-              height="300"
-            />
-            <div className="card-body text-center">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
+            <div className="card col-3">
+              <img
+                src="https://i.pinimg.com/originals/58/ec/77/58ec7707465907e7ba28cf7ddcf0ee64.jpg"
+                className="card-img-top"
+                alt="..."
+                height="300"
+              />
+              <div className="card-body text-center">
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="card col-3">
-            <img
-              src="https://i.pinimg.com/originals/58/ec/77/58ec7707465907e7ba28cf7ddcf0ee64.jpg"
-              className="card-img-top"
-              alt="..."
-              height="300"
-            />
-            <div className="card-body text-center">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
+            <div className="card col-3">
+              <img
+                src="https://i.pinimg.com/originals/58/ec/77/58ec7707465907e7ba28cf7ddcf0ee64.jpg"
+                className="card-img-top"
+                alt="..."
+                height="300"
+                width="100"
+              />
+              <div className="card-body text-center">
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
             </div>
           </div>
         </div>
