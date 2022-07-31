@@ -153,15 +153,15 @@ const Fabric = () => {
       </div>
       <div className="row mt-5 d-flex">
         <button
-          className="btn btn-primary col-10 mx-auto d-md-none"
+          className="btn btn-primary col-10 mx-auto d-md-none my-3"
           onClick={() => setIsShowed(!isShowed)}
         >
           View design inspiration
         </button>
         <div className={isShowed ? "" : "d-none d-lg-block"}>
           <h1 className="my-5 text-center">Design Inspiration</h1>
-          <div className="col-12 d-flex justify-content-between mb-5">
-            <div className="card col-3">
+          <div className="col-12 d-md-flex justify-content-between mb-5">
+            <div className="card my-3 col-md-3">
               <img
                 src="https://i.pinimg.com/originals/58/ec/77/58ec7707465907e7ba28cf7ddcf0ee64.jpg"
                 className="card-img-top"
@@ -176,7 +176,7 @@ const Fabric = () => {
                 </p>
               </div>
             </div>
-            <div className="card col-3">
+            <div className="card my-3 col-md-3">
               <img
                 src="https://i.pinimg.com/originals/58/ec/77/58ec7707465907e7ba28cf7ddcf0ee64.jpg"
                 className="card-img-top"
@@ -191,7 +191,7 @@ const Fabric = () => {
                 </p>
               </div>
             </div>
-            <div className="card col-3">
+            <div className="card my-3 col-md-3">
               <img
                 src="https://i.pinimg.com/originals/58/ec/77/58ec7707465907e7ba28cf7ddcf0ee64.jpg"
                 className="card-img-top"
